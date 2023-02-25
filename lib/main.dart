@@ -13,7 +13,6 @@ class SimpleCalculator extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Cakoolator',
         theme: ThemeData(primarySwatch: Colors.blueGrey),
         home: const MainPage(
           title: 'KakuKu',
@@ -36,7 +35,7 @@ class _MainPageState extends State<MainPage> {
   double num2 = 0;
   String operand = "";
 
-  buttonPressed(String buttonText) {
+  onButtonPressed(String buttonText) {
     if (buttonText == "CLEAR") {
       _output = "0";
       num1 = 0;
@@ -79,7 +78,7 @@ class _MainPageState extends State<MainPage> {
     });
   }
 
-  buildButton(String buttonText,
+  buttonBuilder(String buttonText,
       {Color backgroundColour = Colors.white, textColor = Colors.black87}) {
     return Expanded(
       child: SizedBox(
@@ -87,7 +86,7 @@ class _MainPageState extends State<MainPage> {
         child: Padding(
           padding: const EdgeInsets.all(2.9),
           child: OutlinedButton(
-            onPressed: (() => buttonPressed(buttonText)),
+            onPressed: (() => buttonBuilder(buttonText)),
             style: OutlinedButton.styleFrom(backgroundColor: backgroundColour),
             child: Text(
               buttonText,
@@ -131,39 +130,39 @@ class _MainPageState extends State<MainPage> {
               children: [
                 Row(
                   children: [
-                    buildButton("7"),
-                    buildButton("8"),
-                    buildButton("9"),
-                    buildButton("/")
+                    buttonBuilder("7"),
+                    buttonBuilder("8"),
+                    buttonBuilder("9"),
+                    buttonBuilder("/")
                   ],
                 ),
                 Row(
                   children: [
-                    buildButton("4"),
-                    buildButton("5"),
-                    buildButton("6"),
-                    buildButton("x")
+                    buttonBuilder("4"),
+                    buttonBuilder("5"),
+                    buttonBuilder("6"),
+                    buttonBuilder("x")
                   ],
                 ),
                 Row(
                   children: [
-                    buildButton("1"),
-                    buildButton("2"),
-                    buildButton("3"),
-                    buildButton("-")
+                    buttonBuilder("1"),
+                    buttonBuilder("2"),
+                    buttonBuilder("3"),
+                    buttonBuilder("-")
                   ],
                 ),
                 Row(
                   children: [
-                    buildButton("0"),
-                    buildButton("00"),
-                    buildButton("+")
+                    buttonBuilder("0"),
+                    buttonBuilder("00"),
+                    buttonBuilder("+")
                   ],
                 ),
                 Row(
                   children: [
-                    buildButton("CLEAR"),
-                    buildButton("=",
+                    buttonBuilder("CLEAR"),
+                    buttonBuilder("=",
                         backgroundColour: Colors.black, textColor: Colors.white)
                   ],
                 )
