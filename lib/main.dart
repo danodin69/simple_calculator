@@ -84,9 +84,9 @@ class _MainPageState extends State<MainPage> {
       child: SizedBox(
         height: 70,
         child: Padding(
-          padding: const EdgeInsets.all(2.9),
+          padding: const EdgeInsets.all(0),
           child: OutlinedButton(
-            onPressed: (() => buttonBuilder(buttonText)),
+            onPressed: (() => onButtonPressed(buttonText)),
             style: OutlinedButton.styleFrom(backgroundColor: backgroundColour),
             child: Text(
               buttonText,
@@ -105,7 +105,7 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         title: Text(
           widget.title,
-          style: const TextStyle(fontSize: 12, color: Colors.black87),
+          style: const TextStyle(fontSize: 18, color: Colors.black87),
         ),
         elevation: 0.0,
         backgroundColor: Colors.transparent,
@@ -123,7 +123,7 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
             const SizedBox(
-              height: 40,
+              height: 130,
             ),
             const Divider(),
             Column(
@@ -171,7 +171,7 @@ class _MainPageState extends State<MainPage> {
             const Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(18.0),
                   child: Text(
                     'App by Dan Odin',
                     style: TextStyle(
